@@ -35,17 +35,22 @@ if __name__ == "__main__":
         command = func[0]
 
         if command == "input":
-            instructions.insert(i, pcount + '0' + '001' + '000' + rr[registers_h.index(params[0])] + '11' + binary(params[1], 8))
+            instructions[i] = pcount + '0' + '001' + '000' + rr[registers_h.index(params[0])] + '11' + binary(params[1], 8)
         elif command == "print":
-            instructions.insert(i, pcount + '0' + '00' + l[registers_h.index(params[0])] + '10000' + '00' + '00000000')
+            instructions[i] = pcount + '0' + '00' + l[registers_h.index(params[0])] + '10000' + '00' + '00000000'
         elif command == "add":
-            instructions.insert(i, pcount + '0' + '100' + '000' + rr[registers_h.index(params[0])] + '00' + '00000000')
+            instructions[i] = pcount + '0' + '100' + '000' + rr[registers_h.index(params[0])] + '00' + '00000000'
         elif command == "sub":
-            instructions.insert(i, pcount + '0' + '101' + '000' + rr[registers_h.index(params[0])] + '00' + '00000000')
+            instructions[i] = pcount + '0' + '101' + '000' + rr[registers_h.index(params[0])] + '00' + '00000000'
         elif command == "mov":
-            instructions.insert(i, pcount + '0' + '00' + l[registers_h.index(params[0])] + '000' + rr[registers_h.index(params[0])] + '00' + '00000000')
+            instructions[i] = pcount + '0' + '00' + l[registers_h.index(params[0])] + '000' + rr[registers_h.index(params[0])] + '00' + '00000000'
         elif command == "inc":
-            print pcount + '0' + '0' + ic[registers_h.index(params[0])] + '000' + rr[registers_h.index(params[0])] + '00' + '00000000'
+            instructions[i] = pcount + '0' + '0' + ic[registers_h.index(params[0])] + '000' + rr[registers_h.index(params[0])] + '00' + '00000000'
+        elif command == "and":
+            instructions[i] = pcount + '0' + '110' + '10000' + '00' + '00000000'
+        elif command == "or":
+            ##### 0 111 10000 00 00000000
+            instructions[i] = pcount + '0' + '111' + '10000' + '00' + '00000000'
 
 
 
