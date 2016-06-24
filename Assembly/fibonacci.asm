@@ -1,4 +1,4 @@
-input .a, 0
+input .a, 2
 input .b, 1
 add .a, .b
 sub .b, .a
