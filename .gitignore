@@ -1,0 +1,3 @@
+#Ignonar ./idea 'Pasta de controle do JetBrains'
+.idea/**/*
+*.swp
