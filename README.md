@@ -9,40 +9,40 @@ Equipe: [@allexlima](https://github.com/allexlima), [@pauloigormoraes](https://g
 1. Endereçamento de 5bits;
 2. Registradores de 8bits;
 3. Memória de 32x24-bits para armazenamento de instruções;
-4. Operações disponíveis (na ULA):
-    a) A,
-    b) B,
-    c) A+1,
-    d) B + 1,
-    e) A+B,
-    f) A-B,
-    g) A AND B, e
-    h) A OR B
+4. Operações disponíveis (na ULA):<br>
+    a) A,<br>
+    b) B,<br>
+    c) A+1,<br>
+    d) B + 1,<br>
+    e) A+B,<br>
+    f) A-B,<br>
+    g) A AND B, e<br>
+    h) A OR B<br>
 5. **[Extra]** Instruções de 24bits (No projeto original, o autor utiliza 16bits);
 6. **[Extra]** Tradutor em _Python_: possibilita a escrita de instruções em Assembly em um formato inspirado no MIPS-Assembly para que possam ser convertidas para sequencias em hexadecimal (formato que Logisim exige para armazenar as instruções na memória ROM/RAM que o mesmo disponibiliza); e
 7. **[Extra]** Introdução de novas instruções.
 
 ### Organização dos componentes
     
-1. ALU (Unidade Lógica e Aritmética)
-    a) Arquitetura
-    ![alt tag](https://raw.githubusercontent.com/allexlima/SimpleProcessor8Bits/master/Photos/ula.png)
-    b) Chip
-    ![alt tag](https://raw.githubusercontent.com/allexlima/SimpleProcessor8Bits/master/Photos/1.png)
+1. ALU (Unidade Lógica e Aritmética)<br>
+    a) Arquitetura<br>
+    ![alt tag](https://raw.githubusercontent.com/allexlima/SimpleProcessor8Bits/master/Photos/ula.png)<br>
+    b) Chip<br>
+    ![alt tag](https://raw.githubusercontent.com/allexlima/SimpleProcessor8Bits/master/Photos/1.png)<br>
 
-2. Datapath (Caminho de dados)
-    a) Arquitetura
-    ![alt tag](https://raw.githubusercontent.com/allexlima/SimpleProcessor8Bits/master/Photos/datapath.png)
-    b) Chip
-    ![alt tag](https://raw.githubusercontent.com/allexlima/SimpleProcessor8Bits/master/Photos/2.png)
+2. Datapath (Caminho de dados)<br>
+    a) Arquitetura<br>
+    ![alt tag](https://raw.githubusercontent.com/allexlima/SimpleProcessor8Bits/master/Photos/datapath.png)<br>
+    b) Chip<br>
+    ![alt tag](https://raw.githubusercontent.com/allexlima/SimpleProcessor8Bits/master/Photos/2.png)<br>
 
-3. Unidade de Controle
-    a) Arquitetura
-    ![alt tag](https://raw.githubusercontent.com/allexlima/SimpleProcessor8Bits/master/Photos/control_unit.png)
-    b) Chip
-    ![alt tag](https://raw.githubusercontent.com/allexlima/SimpleProcessor8Bits/master/Photos/3.png)
+3. Unidade de Controle<br>
+    a) Arquitetura<br>
+    ![alt tag](https://raw.githubusercontent.com/allexlima/SimpleProcessor8Bits/master/Photos/control_unit.png)<br>
+    b) Chip<br>
+    ![alt tag](https://raw.githubusercontent.com/allexlima/SimpleProcessor8Bits/master/Photos/3.png)<br>
 
-4. Visão principal/final
+4. Visão principal/final<br>
     ![alt tag](https://raw.githubusercontent.com/allexlima/SimpleProcessor8Bits/master/Photos/main.png)
 
 ### Requisitos para a simulação
@@ -75,22 +75,26 @@ Todos os arquivos em assembly (```.asm```) devem ficar na pasta ```./Assembly/``
 Na pasta ```./Assembly/``` já existem dois exemplos ```soma.asm``` e ```fibonacci.asm```.
 
 1. Abra o arquivo ```soma.asm```, que deve estar como código abaixo:
-    ```
-    input .a, 6
-    inc .a
-    print .a
-    inc .a
-    print .a
-    input .b, 4
-    add .a, .b
-    print .a
-    ```
+
+  ```
+  input .a, 6
+  inc .a
+  print .a
+  inc .a
+  print .a
+  input .b, 4
+  add .a, .b
+  print .a
+  ```
+
 2. Observe que as parcelas da soma encontram-se nas linhas 1 e 6. Altere como queira.
 3. Feche o arquivo e abra o terminal.
 4. Informe o nome do arquivo a ser "traduzido" para hexadecimal, nesse caso ```soma.asm```, para o programa ```translator.py```:
-    ```
-    $ python translator.py soma.asm
-    ```
+
+  ```
+  $ python translator.py soma.asm
+  ```
+
 5. O programa irá converter e salvar a saída com o mesmo nome (porém extensão diferente) na pasta ```./Test/```
 6. Com o projeto ```Processor.circ``` aberto no Logisim, carregue o arquivo ```.hex```de saída do tradutor na memória RAM e em seguida inicie o _clock_.
 7. O resultado será exibido nos displays do processador. 
